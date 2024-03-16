@@ -16,11 +16,11 @@ CORS(server)
 
 
 # Keep this out of source code repository - save in a file or a database
-VALID_USERNAME_PASSWORD_PAIRS = {"hello": "world"}
+#VALID_USERNAME_PASSWORD_PAIRS = {"hello": "world"}
 
 app = dash.Dash(__name__, use_pages=True, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
-auth = dash_auth.BasicAuth(app, VALID_USERNAME_PASSWORD_PAIRS)
+#auth = dash_auth.BasicAuth(app, VALID_USERNAME_PASSWORD_PAIRS)
 
 navbar = dbc.NavbarSimple(
     dbc.DropdownMenu(
@@ -40,7 +40,7 @@ navbar = dbc.NavbarSimple(
 
 app.layout = dbc.Container(
     [navbar, dash.page_container],
-    fluid=True
+    fluid=True,
 )
 
 if __name__ == "__main__":

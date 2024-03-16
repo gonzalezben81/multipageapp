@@ -16,14 +16,14 @@ import pandas
 
 
 # Keep this out of source code repository - save in a file or a database
-#VALID_USERNAME_PASSWORD_PAIRS = {"hello": "world"}
+VALID_USERNAME_PASSWORD_PAIRS = {"hello": "world"}
 
 app = dash.Dash(__name__, use_pages=True, external_stylesheets=[dbc.themes.BOOTSTRAP])
 server = app.server  # Expose the Flask server instance
 
 # Enable CORS for your Dash app
 CORS(server)
-#auth = dash_auth.BasicAuth(app, VALID_USERNAME_PASSWORD_PAIRS)
+auth = dash_auth.BasicAuth(app, VALID_USERNAME_PASSWORD_PAIRS)
 
 navbar = dbc.NavbarSimple(
     dbc.DropdownMenu(
